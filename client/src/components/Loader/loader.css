@@ -1,0 +1,92 @@
+body.loading {
+    overflow: hidden;
+    height: 100vh;
+  }
+
+.loader
+ {
+    position: absolute;
+    transform-origin: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.transition-image {
+    position: absolute;
+    transform-origin: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader-inner{
+    position: absolute;
+    transform-origin: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Logo {
+    position: relative;
+    transform-origin: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    left: 16%;
+    bottom: 14%;
+}
+
+
+.Logo1 {
+    position: relative;
+    transform-origin: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    left: 16%;
+    bottom: 14%;
+   
+}
+
+.Logo2 {
+    position: absolute;
+    transform-origin: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+        right: 12%;
+        top: 8%;
+}
+
+.Logo3 {
+    position: absolute;
+    transform-origin: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 400px;
+        width: 40%;
+        right: 20%;
+        bottom: 10%;
+}
+
+.Logo4 {
+    position: absolute;
+    transform-origin: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 280px;
+        left: 14%;
+        top: 12%;
+}
+
+.img {
+    width: 100%;
+        object-fit: fill;
+}
