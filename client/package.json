@@ -15,7 +15,6 @@
     "framer-motion": "^4.1.17",
     "graphql": "^14.6.0",
     "jwt-decode": "^2.2.0",
-    "node-sass": "^5.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^6.4.3",

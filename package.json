@@ -19,12 +19,7 @@
   "bugs": {
     "url": "https://github.com/brian-nelson10/tmt-ecommerce-store/issues"
   },
-  "homepage": "https://github.com/brian-nelson10/tmt-ecommerce-store#readme",
   "devDependencies": {
     "concurrently": "^5.1.0"
-  },
-  "dependencies": {
-    "node-sass": "^8.0.0",
-    "react-parallax": "^3.5.1"
   }
 }

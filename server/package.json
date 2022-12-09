@@ -1,5 +1,5 @@
 {
-  "name": "server-side",
+  "name": "mern-server",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -17,7 +17,8 @@
     "express": "^4.17.1",
     "graphql": "^15.5.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.7"
+    "mongoose": "^5.9.7",
+    "stripe": "^11.2.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"

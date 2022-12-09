@@ -12,17 +12,15 @@ import { setContext } from '@apollo/client/link/context';
 
 import Landing from './pages/Landing';
 // import Loader from './components/Loader/Loader';
-// import Header from './components/Header/Header';
 // import Home from './pages/Home';
-// import Detail from './pages/Detail';
-// import NoMatch from './pages/NoMatch';
-// import Login from './pages/Login';
-// import Signup from './pages/Signup';
-// import Nav from './components/Nav';
+import Detail from './pages/Detail';
+import NoMatch from './pages/NoMatch';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 // import Logo from '../src/assets/images/tmt-logo2-removebg.png'
 import { StoreProvider } from './utils/GlobalState';
-// import Success from './pages/Success';
-// import OrderHistory from './pages/OrderHistory';
+import Success from './pages/Success';
+import OrderHistory from './pages/OrderHistory';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -58,7 +56,7 @@ function App() {
                 path="/" 
                 element={<Landing />} 
               /> 
-              {/* <Route 
+              <Route 
                 path="/login" 
                 element={<Login />} 
               />
@@ -81,7 +79,7 @@ function App() {
               <Route 
                 path="*" 
                 element={<NoMatch />} 
-              /> */}
+              />
             </Routes>
           </StoreProvider>
         </div>

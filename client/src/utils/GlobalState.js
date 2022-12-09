@@ -11,6 +11,9 @@ const StoreProvider = ({ value = [], ...props }) => {
       cartOpen: false,
       categories: [],
       currentCategory: '',
+      // arr1: ['#t2', '#t3', '#t4'],
+      // arr2: ['dos', 'tres', 'cuatro']
+  
     });
     // use this to confirm it works!
     console.log(state);
