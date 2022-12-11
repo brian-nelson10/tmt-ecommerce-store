@@ -20,6 +20,9 @@ import Skull from '../assets/icons/cuteSkull.png'
 import Cart from '../assets/icons/cart.ico';
 import Footer from '../components/Footer';
 import WallPaper from '../assets/images/musicWallPaper.png';
+import ClothesHands from '../assets/images/clothesHandsBw.png';
+import AccessWallPaper from '../assets/images/accessWallPaper2.png';
+import ToothBurst from '../assets/images/toothBurstBw.png';
 import { Container, Grid, Stack } from '@mui/material';
 
 
@@ -133,7 +136,7 @@ const Landing = ({isFirstMount}) => {
                 </Grid>  
                 
                 <Grid container rowSpacing={1} direction="column" sx={{ alignItems: "center", justifyContent: "center" }} class="page" id="p3" style={{overflow: 'scroll'}}>
-                    <Grid>
+                    <Grid style={{ backgroundImage: `url(${ClothesHands})`, backgroundSize: '570px'}}>
                     <Stack direction="column" sx={{ alignItems: "center", justifyContent: "center" }}>
                     <Grid item xs={6} md={2}>
                     <h1 class="heading">Clothes</h1>
@@ -146,7 +149,7 @@ const Landing = ({isFirstMount}) => {
                 </Grid>
                 
                 <Grid container rowSpacing={1} direction="column" sx={{ alignItems: "center", justifyContent: "center" }} class="page" id="p4" style={{overflow: 'scroll'}}>
-                    <Grid>
+                    <Grid style={{ backgroundImage: `url(${AccessWallPaper})`, backgroundSize: '600px'}}>
                     <Stack direction="column" sx={{ alignItems: "center", justifyContent: "center" }}>
                     <Grid item xs={6} md={2}>
                     <h1 class="heading">Accesories</h1>
@@ -159,7 +162,7 @@ const Landing = ({isFirstMount}) => {
                 </Grid>
 
                 <Grid container rowSpacing={1} direction="column" sx={{ alignItems: "center", justifyContent: "center" }} class="page" id="p5" style={{overflow: 'scroll'}}>
-                <Grid>
+                <Grid style={{ backgroundImage: `url(${ToothBurst})`, backgroundSize: '600px', height: '1000px'}}>
                 <Stack direction="column" sx={{ alignItems: "center", justifyContent: "center" }}>
                     <Grid item xs={6} md={2}>
                     <h1 class="heading">Cart</h1>

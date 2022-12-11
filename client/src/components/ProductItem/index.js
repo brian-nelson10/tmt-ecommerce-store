@@ -71,7 +71,7 @@ function ProductItem(item) {
       </Link>
       <CardContent >
         <Grid container sx={{ alignItems: "center", justifyContent: "center" }}>
-        <Typography gutterBottom variant="h4" component="div" style={{ fontFamily: 'Lacquer', fontWeight: 800, color: 'white' }}>
+        <Typography gutterBottom variant="h4" component="div" style={{ fontFamily: 'Lacquer', fontWeight: 800, color: 'black' }}>
           {name}
         </Typography>
         </Grid>
