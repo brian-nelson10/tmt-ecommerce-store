@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Lacquer&display=swap');
+
+.social-menu {
+    filter: url("#shadowed-goo");
+    -webkit-filter: url("#shadowed-goo");
+    }
+    .menuItem, .social-menu-open-button {
+    font-family: Lacquer;
+    font-weight: 600;
+    background: rgb(247, 142, 162);
+    border-radius: 100%;
+    width: 85px;
+    height: 80px;
+    margin-left: 80px;
+    position: absolute;
+    top: 20px;
+    color: black;
+    text-align: center;
+    line-height: 80px;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    transition: -webkit-transform ease-out 200ms;
+    transition: transform ease-out 200ms;
+    transition: transform ease-out 200ms, -webkit-transform ease-out 200ms;
+    cursor: pointer;
+    }
+    .social-menu-open {
+    display: none;
+    }
+    .logo {
+    margin-top: 12px;
+    height: 60px;
+    transition: -webkit-transform 200ms;
+    transition: transform 200ms;
+    transition: transform 200ms, -webkit-transform 200ms;
+    }
+  
+    .social-menu {
+    position: absolute;
+    left: 50%;
+    margin-left: -190px;
+    padding-top: 20px;
+    padding-left: 190px;
+    width: 380px;
+    height: 250px;
+    box-sizing: border-box;
+    font-size: 25px;
+    text-align: left;
+    }
+    .menuItem:hover {
+    background: deeppink;
+    color: white;
+    }
+    .menuItem:nth-child(3) {
+    transition-duration: 90ms;
+    }
+    .menuItem:nth-child(4) {
+    transition-duration: 190ms;
+    }
+    .social-menu-open-button {
+    z-index: 2;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-duration: 400ms;
+    -webkit-transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+    transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+    cursor: pointer;
+    }
+    .social-menu-open-button:hover {
+    -webkit-transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+    transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+    }
+    .social-menu-open:checked + .social-menu-open-button {
+    transition-timing-function: linear;
+    transition-duration: 200ms;
+    -webkit-transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+    transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+    }
+    .social-menu-open:checked ~ .menuItem {
+    transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
+    }
+    .social-menu-open:checked ~ .menuItem:nth-child(4) {
+    transition-duration: 400ms;
+    -webkit-transform: translate3d(-77.04956px, 85.37192px, 0);
+    transform: translate3d(-77.04956px, 85.37192px, 0);
+    }
+    .social-menu-open:checked ~ .menuItem:nth-child(3) {
+    transition-duration: 480ms;
+    -webkit-transform: translate3d(-114.40705px, 11.66307px, 0);
+    transform: translate3d(-114.40705px, 11.66307px, 0);
+    }

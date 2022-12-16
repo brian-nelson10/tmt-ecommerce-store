@@ -1,5 +1,6 @@
 import './landing.css';
 import React, { useEffect } from 'react';
+// import { useNavigate } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { motion } from "framer-motion";
 import { useStoreContext } from '../utils/GlobalState';
@@ -9,14 +10,16 @@ import {
 } from '../utils/actions';
 import { QUERY_CATEGORIES } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';
+// import Auth from '../utils/auth';
 import MusicList from '../components/MusicList/index';
 import ClothesList from '../components/ClothesList';
 import AccessoriesList from '../components/AccessoriesList';
+import Header from '../components/Header';
 import ToothLogo from '../assets/images/tmt-logo-pink.png';
 import ToothLogo2 from '../assets/icons/toothNoBg2.png';
 import MusicNote from '../assets/icons/musicNotes.png';
 import Shirt from '../assets/icons/shirt.ico';
-import Skull from '../assets/icons/cuteSkull.png'
+import Diamond from '../assets/icons/diamond.png';
 import Cart from '../assets/icons/cart.ico';
 import Footer from '../components/Footer';
 import WallPaper from '../assets/images/musicWallPaper.png';
@@ -43,6 +46,17 @@ const content = (isFirstMount) => ({
       },
     },
   };
+  const log = {
+    initial: { x: 30, opacity: 0 },
+    animate: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 1.7,
+        ease: [0.6, -0.05, 0.01, 3.5],
+      },
+    },
+  };
 
 const Landing = ({isFirstMount}) => {
     const [state, dispatch] = useStoreContext();
@@ -50,7 +64,7 @@ const Landing = ({isFirstMount}) => {
     const { categories } = state;
   
     const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
-  
+
     useEffect(() => {
       if (categoryData) {
         dispatch({
@@ -108,20 +122,22 @@ const Landing = ({isFirstMount}) => {
                   <a href="#t1"><li><img className="icon" alt="icon" src={ToothLogo2} id="uno" /></li></a> 
                   <a href="#t2"><li style={{ listStyle: 'none' }}><img class="icon" alt="icon" src={MusicNote} id="dos" /></li></a>
                   <a href="#t3"><li style={{ listStyle: 'none' }}><img class="icon" alt="icon" src={Shirt} id="tres" /></li></a>
-                  <a href="#t4"><li><img class="icon" alt="icon" src={Skull} id="cuatro" /></li></a>
+                  <a href="#t4"><li><img class="icon" alt="icon" src={Diamond} id="cuatro" /></li></a>
                   <a href="#t5"><li><img class="icon" alt="icon" src={Cart} id="cinco" /></li></a></>
                  
                 </motion.ul>
                  
-                </motion.div>
+                
 
                 <div class="page" id="p1" style={{ backgroundImage: `url(${ToothLogo })`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: '700px' }}>
+               
+               <motion.div variants={log} class="login"><Header/></motion.div>
                 <Container>
                     <section class="icon"><span class="title"></span><span class="hint"></span></section>   
                     <br/>
                     </Container>
                 </div>
-                
+                </motion.div>
                 <Grid container rowSpacing={1} direction="column" sx={{ alignItems: "center", justifyContent: "center" }} class="page" id="p2" style={{overflow: 'scroll'}}>
                     <Grid style={{ backgroundImage: `url(${WallPaper})`, backgroundSize: '680px'}}>
                     <Stack direction="column" sx={{ alignItems: "center", justifyContent: "center" }}>

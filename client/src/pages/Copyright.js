@@ -8,7 +8,7 @@ function Copyright(props) {
       <Typography variant="body2" color="text.secondary" align="center" {...props}>
         {'Copyright © '}
         <Link color="inherit" href="#">
-          ca-TOOL-ogue
+          The Missing Teeth
         </Link>{' '}
         {new Date().getFullYear()}
         {'.'}

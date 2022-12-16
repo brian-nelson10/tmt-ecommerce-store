@@ -1,18 +1,17 @@
 import React, { useState } from "react";
-// import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
-import Tooth from '../assets/icons/toothNoBg2.png';
+import Pink from '../assets/images/toothBurstPink.png';
 import Copyright from "./Copyright";
 import { Container,
          Button,
-         IconButton,
          CssBaseline,
          Grid,
          Box,
-         Typography} from '@mui/material/';
+         Typography,
+         TextField} from '@mui/material/';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 function Signup(props) {
@@ -42,20 +41,23 @@ function Signup(props) {
     });
   };
 
-    const theme = createTheme({
-        palette: {
-            secondary: {
-                light: '#ff7961',
-                main: '#f44336',
-                dark: '#ba000d',
-                blue: '#33bfff'
-            },
+  const theme = createTheme({
+    palette: {
+        main: {
+            peach: 'rgb(246, 217, 180)',
+            pink: 'rgb(255, 142, 162)',
+            deep: 'deeppink'
         },
-    });
+    },
+    typography: {
+        fontFamily: [
+            'Lacquer'
+        ].join(','),
+       },});
 
     return (
-        <ThemeProvider theme={theme}>
-            <Container component="main" maxWidth="xs">
+        
+            <Container maxWidth="md" className="loginContainer" sx={{ bgcolor: 'main.peach', height: '100%', width: '100%'}}>
                 <CssBaseline />
                 <Box
                     sx={{
@@ -65,26 +67,19 @@ function Signup(props) {
                         alignItems: 'center',
                     }}
                 >
-                    <IconButton
-                        onClick={(e) => { navigate("/home") }}
-                        sx={{
-                            color: 'white',
-                            bgcolor: 'secondary.blue',
-                            '&:hover': {
-                                color: '#f44336',
-                                bgcolor: 'secondary.blue'
-                            }
-                        }}>
-                        <Tooth sx={{fontSize: '45px'}}/>
-                    </IconButton>
-                    <Typography component="h1" variant="h5">
-                        Sign Up
+                    <ThemeProvider theme={theme}>
+                    <img onClick={(e) => { navigate("/")}} alt="pink tooth logo" src={Pink} style={{ cursor: 'pointer'}}>
+                       
+                       </img>
+                       <Typography component="h1" variant="h5" sx={{ fontFamily: 'fontFamily.Lacquer', fontSize: '90px', fontWeight: '900px' }}>
+                        Create an Account
                     </Typography>
                     <Box sx={{ mt: 3 }}>
                         <form onSubmit={handleFormSubmit}>
                             <Grid container spacing={2}>
                                 <Grid item xs={12}>
-                                    <input
+                                    <TextField
+                                        fullWidth
                                         type="text"
                                         placeholder="First Name"
                                         required
@@ -93,7 +88,8 @@ function Signup(props) {
                                     />
                                 </Grid>
                                 <Grid item xs={12}>
-                                    <input
+                                    <TextField
+                                        fullWidth
                                         type="text"
                                         placeholder="Last Name"
                                         required
@@ -102,7 +98,8 @@ function Signup(props) {
                                     />
                                 </Grid>
                                 <Grid item xs={12}>
-                                    <input
+                                    <TextField
+                                        fullWidth
                                         type="email"
                                         placeholder="Email"
                                         required
@@ -112,7 +109,8 @@ function Signup(props) {
                                     />
                                 </Grid>
                                 <Grid item xs={12}>
-                                    <input
+                                    <TextField
+                                        fullWidth
                                         type="password"
                                         placeholder="Password"
                                         required
@@ -126,16 +124,16 @@ function Signup(props) {
                                 type="submit"
                                 fullWidth
                                 variant="contained"
-                                sx={{ mt: 3, mb: 2, bgcolor: 'secondary.blue', borderRadius: '15px',
+                                sx={{ mt: 3, mb: 2, bgcolor: 'main.pink', borderRadius: '15px',
                                 '&:hover': {
-                                backgroundColor: '#f44336'
+                                backgroundColor: 'main.deep'
                             }}}
                             >
                                 Sign Up
                             </Button>
                             </form>
-                            <Grid container justifyContent="flex-end">
-                                <Grid item>
+                            <Grid container justifyContent="space-between">
+                                <Grid item justifyContent="center">
                                     {/* <Link to="/" variant="body2">Home</Link> */}
                                     <Link to="/login" variant="body2">
                                         Already have an account?
@@ -144,10 +142,11 @@ function Signup(props) {
                             </Grid>
                         
                     </Box>
+        </ThemeProvider>
+
                 </Box>
                 <Copyright sx={{ mt: 5 }} />
             </Container>
-        </ThemeProvider>
     );
 };
 

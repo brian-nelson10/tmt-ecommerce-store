@@ -1,6 +1,6 @@
 import React from "react";
 import './productitem.css';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { pluralize } from "../../utils/helpers"
 import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
@@ -12,10 +12,10 @@ import { Card,
          Button, 
          CardActions,
          Grid, Stack } from '@mui/material';
-// import Logo from '../assets/images/tmt-logo-peach.png';
 
 function ProductItem(item) {
     const [state, dispatch] = useStoreContext();
+    const navigate = useNavigate();
 
     const {
         image,
@@ -89,7 +89,7 @@ function ProductItem(item) {
       <hr/>
       <CardActions>
         <Button id="cb" className="cardButton" size="large" onClick={addToCart} style={{ fontFamily: 'Lacquer', fontWeight: 700, color: 'white', '&:hover': {color: 'deeppink'} }}>Add To Cart</Button>
-        <Button className="cardButton" size="large" style={{ fontFamily: 'Lacquer', fontWeight: 700, color: 'white' }}>Detail</Button>
+        <Button id="cb" onClick={(e) => navigate(`/products/${_id}`)}className="cardButton" size="large" style={{ fontFamily: 'Lacquer', fontWeight: 700, color: 'white', '&:hover': {color: 'deeppink'} }}>Detail</Button>
       </CardActions>
     </Card>
     </div>
