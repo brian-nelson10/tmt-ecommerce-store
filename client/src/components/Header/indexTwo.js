@@ -22,9 +22,9 @@ export default function HeaderTwo() {
 
   return (
     <ThemeProvider theme={theme}>
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx ={{ bgcolor: 'main.peach', boxShadow: 'none'}} >
-        <Toolbar bgcolor="main.peach">
+    <Box sx={{ flexGrow: 1 }} position="sticky">
+      <AppBar position="sticky" sx ={{ bgcolor: 'transparent', boxShadow: 'none', position: 'sticky', height: '100px'}} >
+        <Toolbar sx={{bgcolor: "transparent"}} position="sticky">
          
             <div >
                 <ProfileTwo />

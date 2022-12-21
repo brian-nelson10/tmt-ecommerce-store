@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Lacquer&display=swap');
+
+
+.cartItem, .cartItemButton, strong {
+    font-family: 'Lacquer';
+    font-size: 50px;
+    font-weight: 500;
+}
+strong {
+    font-size: 100px;
+}
+.cartItemButton {
+    border-radius: 15px;
+    background-color: rgb(248, 175, 189);
+    width: 500px;
+}
+.cartItemButton:hover {
+    background-color: deeppink;
+    cursor: pointer;
+}
+.trashButton {
+    padding-bottom: 10px;
+}
+
+.trashButton:hover {
+    scale: 1.2;
+    cursor: pointer;
+}
+
+

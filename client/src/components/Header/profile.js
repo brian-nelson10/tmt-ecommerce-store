@@ -23,7 +23,8 @@ return (
         </label>
         {Auth.loggedIn() ? (
             <><div onClick={(e) => navigate("/orderHistory")} class="menuItem">Orders</div>
-            <div onClick={logout} class="menuItem">Logout</div></>
+            <div onClick={logout} class="menuItem">Logout</div>
+            <div onClick={(e) => navigate("/cart")} class="menuItem">Cart</div></>
         ) : (
         <><div onClick={(e) => navigate("/login")} class="menuItem"> Login </div>
         <div onClick={(e) => navigate("/signup")} class="menuItem"> SignUp </div></>

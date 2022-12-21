@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Lacquer&display=swap');
+
+.playerSong {
+    font-family: Lacquer;
+    font-size: 20px;
+    color: black;
+    margin: 0 0 5px 0;
+}
+
+.playerBand {
+    font-family: Lacquer;
+    color: black;
+    font-size: 18px;
+    margin: 0 0 0 0;
+}

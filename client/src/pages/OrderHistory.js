@@ -26,7 +26,7 @@ const theme = createTheme({
 
 const content = (isFirstMount) => ({
     animate: {
-        transition: { staggerChildren: 1, delayChildren: isFirstMount ? 3.5 : 1 },
+        transition: { staggerChildren: 1, delayChildren: isFirstMount ? 2 : 1 },
     },
 });
 const title = {
@@ -35,7 +35,7 @@ const title = {
         y: 0,
         opacity: 1,
         transition: {
-            duration: 1.7,
+            duration: 1.5,
             ease: [0.6, -0.05, 0.01, 3.5],
         },
     },
@@ -46,7 +46,7 @@ const log = {
         x: 0,
         opacity: 1,
         transition: {
-            duration: 1.7,
+            duration: 1.2,
             ease: [0.6, -0.05, 0.01, 3.5],
         },
     },
@@ -62,7 +62,7 @@ const OrderHistory = ({isFirstMount}) => {
 
     return (
         <>
-            <div class="page" id="p1" style={{ backgroundImage: `url(${ToothLogo})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: '700px' }}>
+            <div class="page" id="p1" style={{ backgroundImage: `url(${ToothLogo})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: '950px' }}>
                 <ThemeProvider theme={theme}>
                     <motion.div
                         initial="initial"
@@ -70,6 +70,7 @@ const OrderHistory = ({isFirstMount}) => {
                         variants={content(isFirstMount)}
 
                     >
+                        <br/><br/>
                         <motion.div variants={log} class="login"> <HeaderTwo /></motion.div>
                         <Container>
                             <Grid container direction="row" sx={{ alignItems: "center", justifyContent: "center" }}>

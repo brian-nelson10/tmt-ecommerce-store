@@ -75,7 +75,14 @@ html, body, .page {
   #t2:target #p1 .login, 
   #t3:target #p1 .login,
   #t4:target #p1 .login,
-  #t5:target #p1 .login {
+  #t5:target #p1 .login  {
+    display: none;
+  }
+
+  #t2:target #p1 .socialIcons, 
+  #t3:target #p1 .socialIcons,
+  #t4:target #p1 .socialIcons,
+  #t5:target #p1 .socialIcons {
     display: none;
   }
   
@@ -195,17 +202,7 @@ html, body, .page {
     -o-transform: translateX(0) !important;
     transition-delay: 1s;
   }
-
-  .heading {
-    padding-left: 20px;
-    font-family: Lacquer;
-    font-size: 100px;
-    color:rgb(248, 175, 189)
-  }
-
   .login {
-    font-family: fifthGrader;
-    font-weight: 200;
     float: right;
     padding-right: 20px;
     padding-top: 10px;
@@ -213,5 +210,19 @@ html, body, .page {
     color: black;
     transition: 1s ease;
   }
+  .loginP1 {
+    float: right;
+    padding-right: 20px;
+    font-size: 100px;
+    color: black;
+    transition: 1s ease;
+  }
 
+  .head {
+    height: 200px;
+  }
+
+  #p11 {
+    padding-right: 80px;
+  }
   

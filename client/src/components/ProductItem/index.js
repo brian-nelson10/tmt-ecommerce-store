@@ -48,7 +48,6 @@ function ProductItem(item) {
             idbPromise('cart', 'put', { ...item, purchaseQuantity: 1 });
         }
     }
-
     return (
         <>
         <br/>
@@ -56,8 +55,6 @@ function ProductItem(item) {
         <Grid container >
     <Grid item container direction="row" >
         <Grid item xs={12} sm={6}>
-        {/* <Container container spacing={1} direction="column" sx={{ alignItems: "center", justifyContent: "center" }}>
-        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}> */}
         <div className='cardProduct'>
         <Card className='cardProduct' 
         sx={{ width: 400 , bgcolor: 'rgb(248, 175, 189)', borderRadius: '10px'}}>
@@ -81,27 +78,35 @@ function ProductItem(item) {
         </Typography>
         <hr/>
       </CardContent>
-      <Stack direction="row">
-      <Typography style={{ color: 'white' }}>{quantity} {pluralize("item", quantity)} in stock</Typography>
+      <Stack direction="row" spacing={10} sx={{justifyContent: 'center', alignItems: 'center'}}>
+        <Grid >
+      <Typography style={{ color: 'white', fontSize: '30px', fontFamily: 'Lacquer' }}>{quantity} {pluralize("item", quantity)} in stock</Typography>
+      </Grid>
       <br/>
-      <Typography style={{ color: 'white' }}>${price}</Typography>
+      <Grid>
+      <Typography style={{ color: 'white', fontSize: '30px', fontFamily: 'Lacquer'}}>${price}</Typography>
+      </Grid>
       </Stack>
       <hr/>
       <CardActions>
+        <Grid container>
+      <Stack direction="row" spacing={22} sx={{justifyContent: 'center', alignItems: 'center'}}>
+        <Grid>
         <Button id="cb" className="cardButton" size="large" onClick={addToCart} style={{ fontFamily: 'Lacquer', fontWeight: 700, color: 'white', '&:hover': {color: 'deeppink'} }}>Add To Cart</Button>
+        </Grid>
+        <Grid>
         <Button id="cb" onClick={(e) => navigate(`/products/${_id}`)}className="cardButton" size="large" style={{ fontFamily: 'Lacquer', fontWeight: 700, color: 'white', '&:hover': {color: 'deeppink'} }}>Detail</Button>
+        </Grid>
+        </Stack>
+        </Grid>
       </CardActions>
     </Card>
     </div>
     </Grid>
     </Grid>
     </Grid>
-    {/* </Container> */}
-    
      <br/>
-     
      </>
     );
 }
-
 export default ProductItem;

@@ -11,7 +11,7 @@ import { Grid } from '@mui/material';
 function MusicList() {
   const [state, dispatch] = useStoreContext();
 
-  const currentCategory = '6391852f3e5b5c57d00f338c';
+  const currentCategory = '63a1042f890d3a205cf08bdf';
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
 

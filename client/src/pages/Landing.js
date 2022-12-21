@@ -1,6 +1,6 @@
 import './landing.css';
 import React, { useEffect } from 'react';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { motion } from "framer-motion";
 import { useStoreContext } from '../utils/GlobalState';
@@ -20,28 +20,34 @@ import ToothLogo2 from '../assets/icons/toothNoBg2.png';
 import MusicNote from '../assets/icons/musicNotes.png';
 import Shirt from '../assets/icons/shirt.ico';
 import Diamond from '../assets/icons/diamond.png';
-import Cart from '../assets/icons/cart.ico';
+import CartIcon from '../assets/icons/cart.ico';
+import Cart from '../components/Cart';
 import Footer from '../components/Footer';
 import WallPaper from '../assets/images/musicWallPaper.png';
 import ClothesHands from '../assets/images/clothesHandsBw.png';
 import AccessWallPaper from '../assets/images/accessWallPaper2.png';
 import ToothBurst from '../assets/images/toothBurstBw.png';
-import { Container, Grid, Stack } from '@mui/material';
-
-
+import MusicBanner from '../assets/images/musicBanner-min.png';
+import AccessBanner from '../assets/images/accessBanner-min.png';
+import ApparelBanner from '../assets/images/apparelBanner-min.png';
+import Banner from '../assets/images/storeBanner.png';
+import CartBanner from '../assets/images/cartBanner-min.png';
+import { Grid, Stack } from '@mui/material';
+import Hero from '../components/Hero';
+import Social from '../components/Social';
 
 const content = (isFirstMount) => ({
     animate: {
-      transition: { staggerChildren: 1, delayChildren: isFirstMount ? 4 : 1 },
+      transition: { staggerChildren: 1, delayChildren: isFirstMount ? 1 : .5 },
     },
   });
   const title = {
-    initial: { y: -20, opacity: 0 },
+    initial: { y: -25, opacity: 0 },
     animate: {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 1.7,
+        duration: 1.2,
         ease: [0.6, -0.05, 0.01, 3.5],
       },
     },
@@ -52,7 +58,18 @@ const content = (isFirstMount) => ({
       x: 0,
       opacity: 1,
       transition: {
-        duration: 1.7,
+        duration: 1,
+        ease: [0.6, -0.05, 0.01, 3.5],
+      },
+    },
+  };
+  const hero = {
+    initial: { y: 30, opacity: 0 },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 1,
         ease: [0.6, -0.05, 0.01, 3.5],
       },
     },
@@ -64,6 +81,8 @@ const Landing = ({isFirstMount}) => {
     const { categories } = state;
   
     const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
+
+    const navigate = useNavigate(); 
 
     useEffect(() => {
       if (categoryData) {
@@ -123,26 +142,41 @@ const Landing = ({isFirstMount}) => {
                   <a href="#t2"><li style={{ listStyle: 'none' }}><img class="icon" alt="icon" src={MusicNote} id="dos" /></li></a>
                   <a href="#t3"><li style={{ listStyle: 'none' }}><img class="icon" alt="icon" src={Shirt} id="tres" /></li></a>
                   <a href="#t4"><li><img class="icon" alt="icon" src={Diamond} id="cuatro" /></li></a>
-                  <a href="#t5"><li><img class="icon" alt="icon" src={Cart} id="cinco" /></li></a></>
-                 
+                  <a href="#t5"><li><img class="icon" alt="icon" src={CartIcon} id="cinco" /></li></a></>
                 </motion.ul>
-                 
-                
 
-                <div class="page" id="p1" style={{ backgroundImage: `url(${ToothLogo })`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: '700px' }}>
+                <div class="page" id="p1" style={{ backgroundImage: `url(${ToothLogo })`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: '950px', overflow: 'scroll' }}>
+                 <div class="socialIcons" id="p10" style={{margin: '0 0 0 0', maxWidth: '400px'}}><Social/></div>
+               <motion.div variants={log} class="loginP1" ><Header/></motion.div>
                
-               <motion.div variants={log} class="login"><Header/></motion.div>
-                <Container>
-                    <section class="icon"><span class="title"></span><span class="hint"></span></section>   
-                    <br/>
-                    </Container>
-                </div>
+               <Grid container sx={{ alignItems: "center", justifyContent: "center", margin: '0 0 0 0' }}>
+                <motion.div class="socialIcons" id="p10"
+                animate={{ scale: [1.2, 1.2, 1, 1], rotate: [0, 0, 540, 0] }} 
+                transition={{
+                  duration: 1.8,
+                  ease: "easeInOut",
+                  times: [0, 0.3, 0.5, 0.8, 1],
+                  repeat: 0,
+                }}>
+                <img alt="store banner" src={Banner}/></motion.div>
+                </Grid>
+                <Grid container sx={{ alignItems: "center", justifyContent: "center", margin: '0 0 0 0' }}>
+               <motion.div class="socialIcons" id="p11" variants={hero}>
+                <Hero/>
+                <h1>Popular Products!</h1>
                 </motion.div>
+                </Grid>
+                <Grid container sx={{ alignItems: "center", justifyContent: "center", margin: '0 0 0 0' }}>
+                  <h1>Popular Products!</h1>
+                </Grid>
+                    </div>
+                    </motion.div>
                 <Grid container rowSpacing={1} direction="column" sx={{ alignItems: "center", justifyContent: "center" }} class="page" id="p2" style={{overflow: 'scroll'}}>
                     <Grid style={{ backgroundImage: `url(${WallPaper})`, backgroundSize: '680px'}}>
+                    <br/><br/>
                     <Stack direction="column" sx={{ alignItems: "center", justifyContent: "center" }}>
-                    <Grid item xs={6} md={2}>
-                    <h1 class="heading">Music</h1>
+                    <Grid container item xs={6} md={2} sx={{alignItems: "center", justifyContent: "center"}}>
+                    <div ><img alt="category banner" class="head" src={MusicBanner}/></div>
                   </Grid>
                         <Grid item xs={6} md={10} >
                         <MusicList />
@@ -153,9 +187,10 @@ const Landing = ({isFirstMount}) => {
                 
                 <Grid container rowSpacing={1} direction="column" sx={{ alignItems: "center", justifyContent: "center" }} class="page" id="p3" style={{overflow: 'scroll'}}>
                     <Grid style={{ backgroundImage: `url(${ClothesHands})`, backgroundSize: '570px'}}>
+                    <br/><br/>
                     <Stack direction="column" sx={{ alignItems: "center", justifyContent: "center" }}>
-                    <Grid item xs={6} md={2}>
-                    <h1 class="heading">Clothes</h1>
+                    <Grid container item xs={6} md={2} sx={{alignItems: "center", justifyContent: "center"}}>
+                    <div ><img alt="category banner" class="head" src={ApparelBanner}/></div>
                   </Grid>
                         <Grid item xs={6} md={10} >
                         <ClothesList />
@@ -166,9 +201,10 @@ const Landing = ({isFirstMount}) => {
                 
                 <Grid container rowSpacing={1} direction="column" sx={{ alignItems: "center", justifyContent: "center" }} class="page" id="p4" style={{overflow: 'scroll'}}>
                     <Grid style={{ backgroundImage: `url(${AccessWallPaper})`, backgroundSize: '600px'}}>
+                    <br/><br/>
                     <Stack direction="column" sx={{ alignItems: "center", justifyContent: "center" }}>
-                    <Grid item xs={6} md={2}>
-                    <h1 class="heading">Accesories</h1>
+                    <Grid container item xs={6} md={2} sx={{alignItems: "center", justifyContent: "center"}}>
+                    <div ><img alt="category banner" class="head" src={AccessBanner}/></div>
                   </Grid>
                         <Grid item xs={6} md={10} >
                         <AccessoriesList />
@@ -178,13 +214,15 @@ const Landing = ({isFirstMount}) => {
                 </Grid>
 
                 <Grid container rowSpacing={1} direction="column" sx={{ alignItems: "center", justifyContent: "center" }} class="page" id="p5" style={{overflow: 'scroll'}}>
-                <Grid style={{ backgroundImage: `url(${ToothBurst})`, backgroundSize: '600px', height: '1000px'}}>
+                <Grid style={{ backgroundImage: `url(${ToothBurst})`, backgroundSize: '600px', minHeight: '1000px'}}>
+                <br/><br/>
                 <Stack direction="column" sx={{ alignItems: "center", justifyContent: "center" }}>
-                    <Grid item xs={6} md={2}>
-                    <h1 class="heading">Cart</h1>
+                <Grid container item xs={6} md={2} sx={{alignItems: "center", justifyContent: "center"}}>
+                    <div ><img alt="category banner" class="head" src={CartBanner}/></div>
                   </Grid>
+                  <br/><br/><br/>
                         <Grid item xs={6} md={10} >
-                        {/* <Cart /> */}
+                        <Cart />
                         </Grid>
                         </Stack>
                         </Grid>

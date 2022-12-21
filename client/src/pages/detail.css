@@ -1,0 +1,34 @@
+.cardButton {
+    color: transparent;
+}
+
+
+
+#cb:hover {
+    color: deeppink;
+    background-color: deeppink;
+}
+
+.Button:hover {
+    color: deeppink;
+}
+
+.cardDetail {    
+   
+    transform: translate(-5px 5px);
+    transition: 1s ease;
+    border-color: white;
+    box-shadow: 0 0 0 0 white;
+}
+
+.cardDetail:hover {
+    box-shadow: -10px 10px 0 0 white;
+    transition: 1s ease;
+    width: 600px;
+    height: 700px;
+    border-radius: 10px;
+    transform: translateX(10px);
+    transform: translateY(-10px);
+
+}
+
