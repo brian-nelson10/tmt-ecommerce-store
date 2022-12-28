@@ -1,5 +1,5 @@
 import './landing.css';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useQuery } from '@apollo/client';
 import { motion } from "framer-motion";
 import { useStoreContext } from '../utils/GlobalState';
@@ -11,7 +11,7 @@ import { idbPromise } from '../utils/helpers';
 import MusicList from '../components/MusicList/index';
 import ClothesList from '../components/ClothesList';
 import AccessoriesList from '../components/AccessoriesList';
-import Header from '../components/Header';
+import Header from '../components/Header/index';
 import ToothLogo from '../assets/images/tmt-logo-pink.png';
 import ToothLogo2 from '../assets/icons/toothNoBg2.png';
 import MusicNote from '../assets/icons/musicNotes.png';
@@ -110,6 +110,7 @@ const Landing = ({isFirstMount}) => {
   
     return (
         <>
+        
         <div class="ct" id="t1">
         <div class="ct" id="t2">
           <div class="ct" id="t3">
@@ -119,7 +120,6 @@ const Landing = ({isFirstMount}) => {
           initial="initial"
           animate="animate"
           variants={content(isFirstMount)}
-          
         >
                 <motion.ul variants={title} id="menu">
                 <>
@@ -142,8 +142,7 @@ const Landing = ({isFirstMount}) => {
                   <a href="#t4"><li><img class="icon" alt="icon" src={Diamond} id="cuatro" /></li></a>
                   <a href="#t5"><li><img class="icon" alt="icon" src={CartIcon} id="cinco" /></li></a></>
                 </motion.ul>
-
-                <div class="page" id="p1" style={{ backgroundImage: `url(${ToothLogo })`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: '950px', overflow: 'scroll' }}>
+                <div class="page" id="p1" style={{ backgroundImage: `url(${ToothLogo })`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: '1020px', overflow: 'scroll' }}>
                  <motion.div variants={title} class="socialIcons" id="p12" style={{margin: '0 0 0 0', maxWidth: '400px'}}><Social/></motion.div>
                <motion.div variants={log} class="loginP1" id="p10"><Header/></motion.div>
                <Grid container id="p12" sx={{ alignItems: "center", justifyContent: "center", margin: '0 0 0 0' }}>
@@ -162,24 +161,22 @@ const Landing = ({isFirstMount}) => {
                 <Hero/>
                 </motion.div>
                 </Grid>
-                
                 <Grid container sx={{ alignItems: "center", justifyContent: "center", margin: '0 0 0 0' }}>
                 <Stack direction="column">
                 <p class="popular">Popular Products</p>
                   <div class="socialIcons"><PopularList/></div>
                   </Stack>
                 </Grid>
-                <br/><br/>
-                  
+                <br/><br/><br/><br/><br/><br/>
                   <Grid container sx={{ alignItems: "center", justifyContent: "center", margin: '0 0 0 0' }}>
                   <Stack direction="column" spacing={0} sx={{ alignItems: "center", justifyContent: "center", margin: '0 0 0 0' }}>
-                
                 <div class="popular"><SignUpButton /></div>
                 <p class="popular" id="join">Join the Tooth Fairy Club</p>
                 <p class="popular" id="sign">To recieve exclusive discounts and more!</p>
                 </Stack>
                 </Grid>
                 <br/><br/>
+                
                     </div>
                     </motion.div>
                 <Grid container rowSpacing={1} direction="column" sx={{ alignItems: "center", justifyContent: "center" }} class="page" id="p2" style={{overflow: 'scroll'}}>
@@ -195,7 +192,6 @@ const Landing = ({isFirstMount}) => {
                         </Stack>
                         </Grid>
                 </Grid>  
-                
                 <Grid container rowSpacing={1} direction="column" sx={{ alignItems: "center", justifyContent: "center" }} class="page" id="p3" style={{overflow: 'scroll'}}>
                     <Grid style={{ backgroundImage: `url(${ClothesHands})`, backgroundSize: '570px'}}>
                     <br/><br/>
@@ -209,7 +205,6 @@ const Landing = ({isFirstMount}) => {
                         </Stack>
                         </Grid>
                 </Grid>
-                
                 <Grid container rowSpacing={1} direction="column" sx={{ alignItems: "center", justifyContent: "center" }} class="page" id="p4" style={{overflow: 'scroll'}}>
                     <Grid style={{ backgroundImage: `url(${AccessWallPaper})`, backgroundSize: '600px'}}>
                     <br/><br/>
@@ -223,7 +218,6 @@ const Landing = ({isFirstMount}) => {
                         </Stack>
                         </Grid>
                 </Grid>
-
                 <Grid container rowSpacing={1} direction="column" sx={{ alignItems: "center", justifyContent: "center" }} class="page" id="p5" style={{overflow: 'scroll'}}>
                 <Grid style={{ backgroundImage: `url(${ToothBurst})`, backgroundSize: '600px', minHeight: '1000px'}}>
                 <br/><br/>

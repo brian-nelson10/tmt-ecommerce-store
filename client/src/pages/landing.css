@@ -17,11 +17,7 @@ html, body, .page {
     overflow: hidden;
     
   }
-  
-  * {
-    font-family: 'open sans', 'lato', 'helvetica', sans-serif;
-  }
-  
+
   .page {
     position: absolute;
   }
@@ -52,7 +48,6 @@ html, body, .page {
     transition-delay: .4s !important;
     
   }
-  
   
   #t2:target #p1, 
   #t3:target #p1,
@@ -92,10 +87,6 @@ html, body, .page {
   #t4:target #p1 .popular,
   #t5:target #p1 .popular {
     display: none;
-  }
-
-  #p10 {
-    position: sticky !important; 
   }
 
   .icon {
@@ -237,14 +228,15 @@ html, body, .page {
   #p11 {
     padding-right: 80px;
   }
+
   #p10,
   #p12,
   #p13,
   #p0 {
     position: sticky !important;
     top: 0 !important;
+    z-index: 1 !important;
     }
-
 
   .storeBanner2 {
     height: 120px !important;

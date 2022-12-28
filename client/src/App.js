@@ -1,6 +1,4 @@
 import React from 'react';
-// import { useEffect, useState } from "react";
-// import { AnimatePresence } from "framer-motion/dist/framer-motion";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
   ApolloClient,
@@ -9,15 +7,11 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-
 import Landing from './pages/Landing';
-// import Loader from './components/Loader/Loader';
-// import Home from './pages/Home';
 import Detail from './pages/Detail';
 import NoMatch from './pages/NoMatch';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-// import Logo from '../src/assets/images/tmt-logo2-removebg.png'
 import { StoreProvider } from './utils/GlobalState';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
@@ -88,12 +82,11 @@ function App() {
             </Routes>
           </StoreProvider>
         </div>
+        
       </Router>
+      
     </ApolloProvider>
   );
 }
 
 export default App;
-
-
-// style={{backgroundImage: `url(${Logo})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', transition: 'ease', ease: [0.6, 0.01, -0.05, 0.9], transitionDuration: 1.6}}
