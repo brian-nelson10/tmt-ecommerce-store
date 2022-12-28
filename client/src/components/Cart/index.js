@@ -9,7 +9,7 @@ import CartItem from '../CartItem';
 import Auth from '../../utils/auth';
 import { useStoreContext } from '../../utils/GlobalState';
 import { ADD_MULTIPLE_TO_CART } from '../../utils/actions';
-import { Button, Stack, Grid } from '@mui/material';
+import { Button, Stack, Grid, Typography } from '@mui/material';
 
 
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
@@ -88,17 +88,25 @@ const Cart = ({isFirstMount}) => {
             ) : (
               <span class="cartItem">(log in to check out)</span>
             )}
-          
+          <br/><br/>
           </Stack>
         </Grid>
+        
       ) : (
         <h3>
+          <Stack direction="row">
           <span role="img" aria-label="shocked">
             😱
           </span>
-          You haven't added anything to your cart yet!
+          <Typography class="h3">
+          Your cart is empty!
+          </Typography>
+          <span role="img" aria-label="shocked">
+            😱
+          </span>
+          </Stack>
         </h3>
-      )}
+      )} 
     </motion.div><br /><br/></>
   );
 };

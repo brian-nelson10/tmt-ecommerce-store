@@ -15,6 +15,7 @@ html, body, .page {
     -o-transition: all .8s cubic-bezier(0.54, 0.35, 0.29, 0.99);  
     color: #fff;
     overflow: hidden;
+    
   }
   
   * {
@@ -85,7 +86,18 @@ html, body, .page {
   #t5:target #p1 .socialIcons {
     display: none;
   }
-  
+
+  #t2:target #p1 .popular, 
+  #t3:target #p1 .popular,
+  #t4:target #p1 .popular,
+  #t5:target #p1 .popular {
+    display: none;
+  }
+
+  #p10 {
+    position: sticky !important; 
+  }
+
   .icon {
     font-size: 32px;
     display: block;
@@ -225,4 +237,33 @@ html, body, .page {
   #p11 {
     padding-right: 80px;
   }
+  #p10,
+  #p12,
+  #p13,
+  #p0 {
+    position: sticky !important;
+    top: 0 !important;
+    }
+
+
+  .storeBanner2 {
+    height: 120px !important;
+  }
+
+  .popular {
+    color: black;
+    font-family: fifthGrader;
+    font-size: 140px;
+  }
+
+  #sign {
+    font-size: 80px !important;
+    margin: 0 0 0 0 !important;
+  }
+
+  #join {
+    margin: 0 0 0 0 !important;
+    font-size: 110px;
+  }
+  
   

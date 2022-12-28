@@ -52,11 +52,13 @@ const CartPage = ({ isFirstMount }) => {
                     <Grid variants={title} container direction="row" sx={{ alignItems: "center", justifyContent: "center" }}>
                     <motion.div variants={title} ><img alt="category banner" class="head" src={CartBanner}/></motion.div>
                         <Cart />
+                        <br/>
                         </Grid>
                         </Container>
                         </motion.div>
                         </Grid>
                         </Grid>
+                        <br/>
                         </>
 
     );

@@ -12,7 +12,7 @@ import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 // import Card from "@material-ui/core/Card";
 import Album from "../../assets/images/toothBurstBw.png";
 import Social from "../Social";
-
+import Jam from "../../assets/audio/jam.mp3"
 const Hero = () => {
     const playAudio = () => {
         const audioEl = document.getElementsByClassName("audio-element")[0];
@@ -24,7 +24,7 @@ const Hero = () => {
 
             <Grid container rowSpacing={1} direction="column" sx={{ alignItems: "center", justifyContent: "center" }} >
                 <Grid >
-                    <br /><br />
+                    
                     <Stack direction="column" sx={{ alignItems: "center", justifyContent: "center" }}>
                         <Grid container item xs={6} md={2} sx={{ alignItems: "center", justifyContent: "center" }}>
                             {/* <div ><img alt="category banner" class="head" src={MusicBanner}/></div> */}
@@ -33,12 +33,12 @@ const Hero = () => {
 
                             <Grid
                                 style={{
-                                    width: 440,
-                                    height: 170,
+                                    width: 540,
+                                    height: 260,
                                     display: "flex",
                                     backgroundColor: "rgb(247, 142, 162)",
                                     borderRadius: "20px",
-                                    boxShadow: "4px 4px 4px gray",
+                                    boxShadow: "4px 4px 4px black",
                                 }}
                             >
                                 <div
@@ -100,8 +100,7 @@ const Hero = () => {
                                     image={Album}
                                 />
                                 <audio className="audio-element">
-                                    <source src=
-                                        "https://assets.coderrocketfuel.com/pomodoro-times-up.mp3">
+                                    <source src={Jam}>
                                     </source>
                                 </audio>
                             </Grid>

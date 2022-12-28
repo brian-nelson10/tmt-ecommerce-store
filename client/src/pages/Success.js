@@ -82,7 +82,7 @@ const Success = ({isFirstMount}) => {
             <Jumbotron>
                 <motion.div initial="initial"
           animate="animate"
-          variants={content(isFirstMount)}><motion.div variants={title}><img src={SuccessBanner}/></motion.div>
+          variants={content(isFirstMount)}><motion.div variants={title}><img alt="success banner" src={SuccessBanner}/></motion.div>
           <motion.div variants={log} >
                 <h2 style={{fontFamily: 'Lacquer', color: 'black', fontSize: '50px'}}>Thank you for your purchase!</h2>
                 <h2 style={{fontFamily: 'Lacquer', color: 'black', fontSize: '50px'}}>You will now be redirected to the home page</h2>

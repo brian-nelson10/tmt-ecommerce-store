@@ -1,16 +1,13 @@
 import './landing.css';
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { motion } from "framer-motion";
 import { useStoreContext } from '../utils/GlobalState';
 import {
-  UPDATE_CATEGORIES,
-  
+  UPDATE_CATEGORIES, 
 } from '../utils/actions';
 import { QUERY_CATEGORIES } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';
-// import Auth from '../utils/auth';
 import MusicList from '../components/MusicList/index';
 import ClothesList from '../components/ClothesList';
 import AccessoriesList from '../components/AccessoriesList';
@@ -35,6 +32,8 @@ import CartBanner from '../assets/images/cartBanner-min.png';
 import { Grid, Stack } from '@mui/material';
 import Hero from '../components/Hero';
 import Social from '../components/Social';
+import PopularList from '../components/PopularList';
+import SignUpButton from '../components/SignUpButton';
 
 const content = (isFirstMount) => ({
     animate: {
@@ -76,13 +75,12 @@ const content = (isFirstMount) => ({
   };
 
 const Landing = ({isFirstMount}) => {
+
     const [state, dispatch] = useStoreContext();
 
-    const { categories } = state;
+    // const { categories } = state;
   
     const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
-
-    const navigate = useNavigate(); 
 
     useEffect(() => {
       if (categoryData) {
@@ -102,14 +100,14 @@ const Landing = ({isFirstMount}) => {
       });
     }
   }, [categoryData, loading, dispatch]);
-  
+
     // const handleClick = (id) => {
     //   dispatch({
     //     type: UPDATE_CURRENT_CATEGORY,
     //     currentCategory: id,
     //   });
     // };
-    
+  
     return (
         <>
         <div class="ct" id="t1">
@@ -146,16 +144,15 @@ const Landing = ({isFirstMount}) => {
                 </motion.ul>
 
                 <div class="page" id="p1" style={{ backgroundImage: `url(${ToothLogo })`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: '950px', overflow: 'scroll' }}>
-                 <div class="socialIcons" id="p10" style={{margin: '0 0 0 0', maxWidth: '400px'}}><Social/></div>
-               <motion.div variants={log} class="loginP1" ><Header/></motion.div>
-               
-               <Grid container sx={{ alignItems: "center", justifyContent: "center", margin: '0 0 0 0' }}>
-                <motion.div class="socialIcons" id="p10"
-                animate={{ scale: [1.2, 1.2, 1, 1], rotate: [0, 0, 540, 0] }} 
+                 <motion.div variants={title} class="socialIcons" id="p12" style={{margin: '0 0 0 0', maxWidth: '400px'}}><Social/></motion.div>
+               <motion.div variants={log} class="loginP1" id="p10"><Header/></motion.div>
+               <Grid container id="p12" sx={{ alignItems: "center", justifyContent: "center", margin: '0 0 0 0' }}>
+                <motion.div class="socialIcons" id="p13" 
+                animate={{ scale: [1.2, 1.2, .9, .8, .7], rotate: [0, 0, 540, 0] }} 
                 transition={{
                   duration: 1.8,
                   ease: "easeInOut",
-                  times: [0, 0.3, 0.5, 0.8, 1],
+                  times: [0, 0.3, 0.5, 0.7, 1],
                   repeat: 0,
                 }}>
                 <img alt="store banner" src={Banner}/></motion.div>
@@ -163,12 +160,26 @@ const Landing = ({isFirstMount}) => {
                 <Grid container sx={{ alignItems: "center", justifyContent: "center", margin: '0 0 0 0' }}>
                <motion.div class="socialIcons" id="p11" variants={hero}>
                 <Hero/>
-                <h1>Popular Products!</h1>
                 </motion.div>
                 </Grid>
+                
                 <Grid container sx={{ alignItems: "center", justifyContent: "center", margin: '0 0 0 0' }}>
-                  <h1>Popular Products!</h1>
+                <Stack direction="column">
+                <p class="popular">Popular Products</p>
+                  <div class="socialIcons"><PopularList/></div>
+                  </Stack>
                 </Grid>
+                <br/><br/>
+                  
+                  <Grid container sx={{ alignItems: "center", justifyContent: "center", margin: '0 0 0 0' }}>
+                  <Stack direction="column" spacing={0} sx={{ alignItems: "center", justifyContent: "center", margin: '0 0 0 0' }}>
+                
+                <div class="popular"><SignUpButton /></div>
+                <p class="popular" id="join">Join the Tooth Fairy Club</p>
+                <p class="popular" id="sign">To recieve exclusive discounts and more!</p>
+                </Stack>
+                </Grid>
+                <br/><br/>
                     </div>
                     </motion.div>
                 <Grid container rowSpacing={1} direction="column" sx={{ alignItems: "center", justifyContent: "center" }} class="page" id="p2" style={{overflow: 'scroll'}}>

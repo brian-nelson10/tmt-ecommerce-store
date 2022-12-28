@@ -148,7 +148,7 @@ const Detail = ({ isFirstMount }) => {
                                                 <Grid item xs={12} sm={6}>
                                                     <div className='cardDetail'>
                                                         <Card className='cardDetail'
-                                                            sx={{ width: 600, height: 700, bgcolor: 'rgb(248, 175, 189)', borderRadius: '10px' }}>
+                                                            sx={{ width: 600, height: 750, bgcolor: 'rgb(248, 175, 189)', borderRadius: '10px' }}>
                                                             
                                                                 <CardMedia
                                                                     component="img"
@@ -164,13 +164,13 @@ const Detail = ({ isFirstMount }) => {
                                                                     </Typography>
                                                                 </Grid>
                                                                 <hr />
-                                                                <Typography variant="body2" color="white">
+                                                                <Typography variant="body2" color="white" style={{ fontFamily: 'Lacquer', fontSize: '20px' }}>
                                                                 {currentProduct.description}
                                                                 </Typography>
                                                                 <hr />
                                                             </CardContent>
                                                             <Grid container sx={{ alignItems: "center", justifyContent: "center" }}>
-                                                                <Typography sx={{ color: 'white', justifyContent: 'center', alignItems: 'center', fontSize: '40px', fontWeight: '700' }}>${currentProduct.price}</Typography>
+                                                                <Typography sx={{ color: 'white', justifyContent: 'center', alignItems: 'center', fontSize: '50px', fontWeight: '700'}} style={{ fontFamily: 'Lacquer'}}>${currentProduct.price}</Typography>
                                                             </Grid>
                                                             <hr />
                                                             <CardActions>
