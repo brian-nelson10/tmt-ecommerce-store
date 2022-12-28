@@ -11,7 +11,7 @@ import { Grid } from '@mui/material';
 function ClothesList() {
   const [state, dispatch] = useStoreContext();
 
-  const currentCategory = '63a1042f890d3a205cf08be0';
+  const currentCategory = '63ac98cc8843f37678d39e82';
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
 
