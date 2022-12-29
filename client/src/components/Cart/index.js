@@ -10,6 +10,7 @@ import Auth from '../../utils/auth';
 import { useStoreContext } from '../../utils/GlobalState';
 import { ADD_MULTIPLE_TO_CART } from '../../utils/actions';
 import { Button, Stack, Grid, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
@@ -28,6 +29,7 @@ const title = {
 const Cart = ({isFirstMount}) => {
   const [state, dispatch] = useStoreContext();
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (data) {
@@ -56,19 +58,19 @@ const Cart = ({isFirstMount}) => {
     return sum.toFixed(2);
   }
 
-  function submitCheckout() {
-    const productIds = [];
+  // function submitCheckout() {
+  //   const productIds = [];
 
-    state.cart.forEach((item) => {
-      for (let i = 0; i < item.purchaseQuantity; i++) {
-        productIds.push(item._id);
-      }
-    });
+  //   state.cart.forEach((item) => {
+  //     for (let i = 0; i < item.purchaseQuantity; i++) {
+  //       productIds.push(item._id);
+  //     }
+  //   });
 
-    getCheckout({
-      variables: { products: productIds },
-    });
-  }
+  //   getCheckout({
+  //     variables: { products: productIds },
+  //   });
+  // }
   
   return (
     <><motion.div class="cartItem" variants={title}>
@@ -83,7 +85,8 @@ const Cart = ({isFirstMount}) => {
             <strong>Total: ${calculateTotal()}</strong>
 
             {Auth.loggedIn() ? (
-              <Button class="cartItemButton" onClick={submitCheckout} >Checkout</Button>
+              // <Button class="cartItemButton" onClick={submitCheckout} >Checkout</Button>
+              <Button class="cartItemButton"  onClick={(e) => { navigate("/success") }}>Checkout</Button>
               
             ) : (
               <span class="cartItem">(log in to check out)</span>
