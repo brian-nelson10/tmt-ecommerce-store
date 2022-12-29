@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "The Missing Teeth Merch Store",
   "main": "server/server.js",
+  "homepage": "https://themissingteeth.herokuapp.com/",
   "engines": {
     "node": "16.17.0"
   },
