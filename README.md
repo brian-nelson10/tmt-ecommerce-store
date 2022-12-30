@@ -35,7 +35,7 @@ Thanks for looking!
 
 # Screenshots
 
-**Usage Video!!![Video](/client/src/assets/screenshots/tmtGif.gif)**
+**Usage Video!!![Video](/client/src/assets/screenshots/tmtGif1.gif)**
 
 **Screen Shot!!![screenshot](/client/src/assets/screenshots/tmtScreenShot1.png)**
 
