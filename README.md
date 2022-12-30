@@ -1,7 +1,7 @@
 # tmt-ecommerce-store 🚀
 An Ecommerce Site for the band, The Missing Teeth. 
 
-Ecommerce site built with the MERN stack inline with the [Create React App](https://github.com/facebook/create-react-app).
+Ecommerce site built using the MERN stack inline with the [Create React App](https://github.com/facebook/create-react-app).
 
 ![badge](https://img.shields.io/badge/MIT-license-success)
 ![badge](https://img.shields.io/badge/version-1.0.0-yellowgreen)
@@ -21,7 +21,7 @@ Ecommerce site built with the MERN stack inline with the [Create React App](http
 
 An Ecommerce Site for the band, The Missing Teeth built with the MERN stack!
 
-Using Create React App, MongoDB, Express, Node.js and graphQL, using industries best practices, i built this eye-catching ecommerce site using stripe for payment.  
+Using Create React App, MongoDB, Express, Node.js and graphQL, using industries best practices, i built this eye-catching ecommerce site that also includes stripe for payment. 
 
 Integrated a Redux like store for global state management using React Hooks and the React Context API, to avoid prop drilling.
 
@@ -35,7 +35,7 @@ Thanks for looking!
 
 # Screenshots
 
-**Usage Video!!![Video](/client/src/assets/screenshots/TMT%20Merch%20Store!%20(1).webm)**
+**Usage Video!!![Video](/client/src/assets/screenshots/tmtGif.gif)**
 
 **Screen Shot!!![screenshot](/client/src/assets/screenshots/tmtScreenShot1.png)**
 
@@ -49,7 +49,11 @@ https://themissingteeth.herokuapp.com/
 
 # Installation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Fork this repo into local directory. 
+
+npm i to install dependencies. 
+
+npm run develop from root to open page on localhost. 
 
 # Usage
 
